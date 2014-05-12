@@ -16,19 +16,20 @@
 
 package org.springframework.boot.cli;
 
-import java.util.ServiceLoader;
-
 import org.springframework.boot.cli.command.CommandFactory;
 import org.springframework.boot.cli.command.CommandRunner;
 import org.springframework.boot.cli.command.core.HelpCommand;
 import org.springframework.boot.cli.command.core.HintCommand;
 import org.springframework.boot.cli.command.core.VersionCommand;
+import org.springframework.boot.cli.command.create.CreateCommand;
 import org.springframework.boot.cli.command.shell.ShellCommand;
+
+import java.util.ServiceLoader;
 
 /**
  * Spring Command Line Interface. This is the main entry-point for the Spring command line
  * application.
- * 
+ *
  * @author Phillip Webb
  * @see #main(String...)
  * @see CommandRunner
@@ -43,6 +44,7 @@ public class SpringCli {
 		addServiceLoaderCommands(runner);
 		runner.addCommand(new ShellCommand());
 		runner.addCommand(new HintCommand(runner));
+        runner.addCommand(new CreateCommand());
 		runner.setOptionCommands(HelpCommand.class, VersionCommand.class);
 		runner.setHiddenCommands(HintCommand.class);
 

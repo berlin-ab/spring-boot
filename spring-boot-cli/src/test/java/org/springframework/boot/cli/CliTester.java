@@ -16,18 +16,6 @@
 
 package org.springframework.boot.cli;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-
 import org.junit.Assume;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
@@ -41,9 +29,21 @@ import org.springframework.boot.cli.command.test.TestCommand;
 import org.springframework.boot.cli.util.OutputCapture;
 import org.springframework.util.SocketUtils;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
 /**
  * {@link TestRule} that can be used to invoke CLI commands.
- * 
+ *
  * @author Phillip Webb
  * @author Dave Syer
  * @author Andy Wilkinson
